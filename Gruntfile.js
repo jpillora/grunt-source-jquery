@@ -1,6 +1,5 @@
 module.exports = function(grunt) {
 
-
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   // ==================
@@ -25,7 +24,6 @@ module.exports = function(grunt) {
       }
     }
   });
-
 
   grunt.registerTask('default', ['uglify']);
 };
