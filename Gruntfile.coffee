@@ -30,8 +30,8 @@ module.exports = (grunt) ->
       break unless m
       key = m[1]
       val = source[key] or pkg[key] or 'missing'
-      encode = "<#{key}>#{val}</#{key}>".replace(/>/g,'⦔').replace(/</g,'⦓')
-      newmd = newmd.replace m[0], encode
+      val = val.replace(/>/g,'&gt;').replace(/</g,'&lt;')
+      newmd = newmd.replace m[0], "⦓#{key}⦔#{val}⦓/#{key}⦔"
 
     newmd = newmd.replace(/⦔/g,'>').replace(/⦓/g,'<')
 
