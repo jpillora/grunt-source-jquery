@@ -23,7 +23,7 @@ module.exports = (grunt) ->
   #README templates
   grunt.registerTask 'readme', 'Allow templating in your README.md', ->
     md = grunt.file.read 'README.md'
-    newmd = md.replace /(<!--\s*(\w+)\s*-->).*(<!---->)/mg, (all, c1, name, c2) ->
+    newmd = md.replace /(<(\w+)>).*(<\/\w+>)/mg, (all, c1, name, c2) ->
       val = source[name] or pkg[name] or "*'#{name}' is missing*"
       # grunt.log.writeln "#{name} = #{val}"
       return c1 + val.replace(/</g,'&lt;').replace(/>/g,'&gt;') + c2
