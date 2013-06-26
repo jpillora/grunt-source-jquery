@@ -2,9 +2,12 @@
   "name": "grunt-source-jquery",
   "version": "0.1.0",
   "devDependencies": {
-    "grunt": "~0.4.1",
+    "grunt": "~0.4.1"
+  },
+  "dependencies": {
     "grunt-contrib-uglify": "~0.2.2",
-    "grunt-contrib-coffee": "~0.7.0",
-    "grunt-contrib-watch": "~0.4.4"
+    "grunt-jpillora-watch": "~0.4.4patch1",
+    "grunt": "~0.4.1",
+    "grunt-contrib-coffee": "~0.7.0"
   }
 }

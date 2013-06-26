@@ -5,19 +5,19 @@
 ## Usage
 
 ``` shell
-npm install -g grunt-source
+npm install -g grunt-source grunt-cli
 ```
 
-Create a `GruntSource.json` file in your plugin's root:
+Create a `Gruntsource.json` file in your plugin's root:
 
 ``` json
 {
-  "source": "../grunt-source-jquery",
+  "source": "~/.grunt-sources/jquery",
   "repo": "https://github.com/jpillora/grunt-source-jquery.git"
 }
 ```
 
-*Note: you can place `grunt-source-jquery` anywhere you'd like by changing the `source` property.*
+*Note: you can the directory by changing the `source` property.*
 
 Then run:
 
@@ -27,6 +27,7 @@ grunt-source
 
 ## Features
 
+* Optionally uses CoffeeScript
 * Constructs your `<name>.jquery.json` plugin descriptor
 * Minifies your source
 * Adds a neat banner
