@@ -37,7 +37,8 @@ module.exports = (grunt) ->
 
     if md isnt newmd
       grunt.file.write 'README.md', newmd
-      grunt.log.writeln "Updated README.md"
+    else
+      grunt.log.writeln "No changes to README.md"
 
   #configuration
   grunt.initConfig
@@ -47,9 +48,9 @@ module.exports = (grunt) ->
     watch:
       options:
         gruntCwd: gruntdir
-      scripts:
-        files: 'src/scripts/**/*.coffee'
-        tasks: 'scripts'
+      build:
+        files: 'src/**/*.coffee'
+        tasks: 'build'
       readme:
         files: 'README.md'
         tasks: 'readme'
@@ -73,5 +74,5 @@ module.exports = (grunt) ->
           "dist/<%= pkg.name %>.min.js": "dist/<%= pkg.name %>.js"
 
   #task groups
-  grunt.registerTask "build",   ["coffee","uglify","readme"]
-  grunt.registerTask "default", ["build","watch"]
+  grunt.registerTask "build",   ["coffee","uglify"]
+  grunt.registerTask "default", ["build","readme","watch"]
