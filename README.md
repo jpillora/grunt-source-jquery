@@ -5,7 +5,7 @@
 ## Usage
 
 ``` shell
-npm install -g grunt-source grunt-cli
+npm install -g grunt-source
 ```
 
 Create a `Gruntsource.json` file in your plugin's root:
